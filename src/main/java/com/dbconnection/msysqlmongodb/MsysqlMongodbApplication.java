@@ -8,6 +8,11 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+/**
+ * @author suresh.thakare
+ * 2022-06-04 at 10:36 AM
+ */
+
 @SpringBootApplication
 public class MsysqlMongodbApplication {
 

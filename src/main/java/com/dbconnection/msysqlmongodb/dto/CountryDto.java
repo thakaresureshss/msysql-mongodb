@@ -8,6 +8,12 @@ import org.springframework.data.annotation.ReadOnlyProperty;
 
 import java.io.Serializable;
 
+
+/**
+ * @author suresh.thakare
+ * 2022-06-04 at 10:36 AM
+ */
+
 @Setter
 @Getter
 @NoArgsConstructor

@@ -11,12 +11,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+
 /**
- * This class is implementation of CountryService interface. It provides functionalities such as
- * finding country, creating new country, editing existing country, deleting country and searching
- * country by specified parameters.
- *
- * @author Pooja
+ * @author suresh.thakare
+ * 2022-06-04 at 10:36 AM
  */
 
 @Service
@@ -44,7 +42,7 @@ public class CountryServiceImpl implements CountryService {
       document.setId(1l);
       countryMongoRepository.save(document);
     } catch (Exception e) {
-      throw new RuntimeException("Error while saving country to DB  ");
+      throw new RuntimeException("Error while saving country to DB  " + e.getMessage());
     }
     BeanUtils.copyProperties(returnedCountry, countryDto);
     return countryDto;
