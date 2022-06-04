@@ -51,10 +51,17 @@ public class CountryServiceImpl implements CountryService {
 
   @Override
   public CountryDto findCountryById(Long id) {
-    Optional<Country> country = Optional.ofNullable(countryRepository.findById(id)).orElseThrow(() -> new RuntimeException("Not found "));
+    Country country = countryRepository.findById(id).orElseThrow(() -> new RuntimeException("Not found in MySQL"));
     CountryDto countryDto = new CountryDto();
-    BeanUtils.copyProperties(country.get(), countryDto);
+    BeanUtils.copyProperties(country, countryDto);
     return countryDto;
   }
 
+  @Override
+  public CountryDto findMongoCountryById(Long countryId) {
+    CountryDocument countryDocument = countryMongoRepository.findById(countryId).orElseThrow(() -> new RuntimeException("Not found in Mongo "));
+    CountryDto countryDto = new CountryDto();
+    BeanUtils.copyProperties(countryDocument.getCountry(), countryDto);
+    return countryDto;
+  }
 }

@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "2a060aab-46c6-4c12-b86d-9d8ecc1467e8",
+		"name": "msysql-mongodb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Country",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"IN\",\n    \"name\": \"India\",\n    \"phoneAreaCode\": \"+91\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/countries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getn Country From MySQL DB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/countries/mysql/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"countries",
+						"mysql",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Country From MongoDB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/countries/mongo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"countries",
+						"mongo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

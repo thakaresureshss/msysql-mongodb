@@ -28,10 +28,14 @@ public class CountryController {
             HttpStatus.CREATED);
   }
 
-  @GetMapping(value = "/countries/{countryId}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<CountryDto> getCountryById(@PathVariable(name = "countryId") Long countryId,
+  @GetMapping(value = "/countries/mongo/{countryId}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<CountryDto> getMongoCountryById(@PathVariable(name = "countryId") Long countryId,
                                                    HttpServletRequest request) {
     return new ResponseEntity<>(countryService.findCountryById(countryId), HttpStatus.OK);
   }
-
+  @GetMapping(value = "/countries/mysql/{countryId}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<CountryDto> getMySqlCountryById(@PathVariable(name = "countryId") Long countryId,
+                                                   HttpServletRequest request) {
+    return new ResponseEntity<>(countryService.findCountryById(countryId), HttpStatus.OK);
+  }
 }

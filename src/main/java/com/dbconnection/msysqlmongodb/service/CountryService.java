@@ -9,8 +9,7 @@ import com.dbconnection.msysqlmongodb.dto.CountryDto;
  */
 
 public interface CountryService {
-
   public CountryDto findCountryById(Long countryId);
-
+  public CountryDto findMongoCountryById(Long countryId);
   public CountryDto addCountry(CountryDto countryDto);
 }
